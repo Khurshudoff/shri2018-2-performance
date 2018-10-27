@@ -10,6 +10,7 @@ const arrowLeftDevs = pagiantorDevs.querySelector('.paginator__arrow_left');
 const arrowRightDevs = pagiantorDevs.querySelector('.paginator__arrow_right');
 const devices = document.querySelector('.devices');
 const panelCountDevs = devices.querySelectorAll('.devices__panel').length;
+
 let currentPageDevs = 1;
 
 pagiantorDevs.classList.toggle('paginator_hide', panelCountDevs < 7);

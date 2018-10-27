@@ -5,11 +5,11 @@ rangeSLider.oninput = function() {
   output.innerHTML = this.value > 0 ? '+' + this.value : this.value;
 }
 
-const arrowLeftDevs = document.querySelector('.page .page__wrapper .page__wrapper-content .content .content__item.content__item_devices .devices__paginator .paginator__arrow_left');
-const arrowRightDevs = document.querySelector('.page .page__wrapper .page__wrapper-content .content .content__item.content__item_devices .devices__paginator .paginator__arrow_right');
-const panelCountDevs = document.querySelectorAll('.devices__panel').length;
-const devices = document.querySelector('.devices');
 const pagiantorDevs = document.querySelector('.page .page__wrapper .page__wrapper-content .content .content__item.content__item_devices .devices__paginator');
+const arrowLeftDevs = pagiantorDevs.querySelector('.paginator__arrow_left');
+const arrowRightDevs = pagiantorDevs.querySelector('.paginator__arrow_right');
+const devices = document.querySelector('.devices');
+const panelCountDevs = devices.querySelectorAll('.devices__panel').length;
 let currentPageDevs = 1;
 
 pagiantorDevs.classList.toggle('paginator_hide', panelCountDevs < 7);

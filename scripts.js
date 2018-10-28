@@ -175,16 +175,20 @@ const TEMPS = {
   'hot': 30
 }
 
-document.querySelectorAll('.modal__filter-item_temp').forEach(l => {
+const modal__filter_item_temp = document.querySelectorAll('.modal__filter-item_temp');
+const adjust_bar_theme_temp = document.querySelector('.adjust-bar_theme_temp')
+const modal_tempModal__value = document.querySelector('.modal_temp .modal__value')
+
+modal__filter_item_temp.forEach(l => {
   l.onclick = function() {
-    document.querySelector('.adjust-bar_theme_temp').value = TEMPS[this.id];
-    document.querySelector('.modal_temp .modal__value').innerHTML = TEMPS[this.id] > 0 ? '+' + TEMPS[this.id] : TEMPS[this.id];
+    adjust_bar_theme_temp.value = TEMPS[this.id];
+    modal_tempModal__value.innerHTML = TEMPS[this.id] > 0 ? '+' + TEMPS[this.id] : TEMPS[this.id];
   }
 });
 
 const showModal = function(selector) {
   document.querySelector(selector).classList.toggle('modal_open', true);
-  document.querySelector('body').style.overflow = 'hidden';
+  body.style.overflow = 'hidden';
 }
 
 document.querySelectorAll('.panel_temp').forEach(p => {
@@ -267,6 +271,9 @@ selectOptions.forEach(o => {
   })
 });
 
-document.querySelector('.menu__icon').addEventListener('click', function () {
-  document.querySelector('.menu').classList.toggle('menu_open');
+const menu__icon = document.querySelector('.menu__icon');
+const menu = document.querySelector('.menu');
+
+menu__icon.addEventListener('click', function () {
+  menu.classList.toggle('menu_open');
 });

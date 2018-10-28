@@ -5,10 +5,10 @@ rangeSLider.oninput = function() {
   output.innerHTML = this.value > 0 ? '+' + this.value : this.value;
 }
 
-const pagiantorDevs = document.querySelector('.page .page__wrapper .page__wrapper-content .content .content__item.content__item_devices .devices__paginator');
+const pagiantorDevs = document.querySelector('#devices__paginator');
 const arrowLeftDevs = pagiantorDevs.querySelector('.paginator__arrow_left');
 const arrowRightDevs = pagiantorDevs.querySelector('.paginator__arrow_right');
-const devices = document.querySelector('.devices');
+const devices = document.querySelector('#devices');
 const panelCountDevs = devices.querySelectorAll('.devices__panel').length;
 
 let currentPageDevs = 1;

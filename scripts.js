@@ -48,6 +48,12 @@ const rotateToValue = function(rotate) {
 /**
  * @param {Number} rotate Количество оборотов от нейтриального положения.
  */
+
+const modal_knobModal__value = document.querySelector('.modal_knob .modal__value');
+const knob__value = document.querySelector('.knob__value');
+const knob__indicator = document.querySelector('.knob__indicator');
+const knob__arrow = document.querySelector('.knob__arrow');
+
 function setRotate(rotate) {
   if (rotate > 0.42) {
     rotate = 0.42;
@@ -58,10 +64,10 @@ function setRotate(rotate) {
   curRotate = rotate;
   curValue = rotateToValue(rotate);
 
-  document.querySelector('.modal_knob .modal__value').innerHTML = '+' + curValue;
-  document.querySelector('.knob__value').innerHTML = '+' + curValue;
-  document.querySelector('.knob__indicator').style.strokeDasharray = curRotate * 360 * 1.73 + 265 + ' 629';
-  document.querySelector('.knob__arrow').style.transform = 'rotate(' + (curRotate * 360) + 'deg)';
+  modal_knobModal_value.innerHTML = '+' + curValue;
+  knob_value.innerHTML = '+' + curValue;
+  knob__indicator.style.strokeDasharray = curRotate * 360 * 1.73 + 265 + ' 629';
+  knob__arrow.style.transform = 'rotate(' + (curRotate * 360) + 'deg)';
 }
 
 function getPosition(elem) {
@@ -92,10 +98,12 @@ let knobDragged;
 let prevAngleRad = null;
 let prevRotate = null;
 
+const knob_center = document.querySelector('.knob_center');
+
 function startDragging(e) {
   e.preventDefault();
   e.stopPropagation();
-  const rad = getMouseAngle(e, document.querySelector('.knob_center'));
+  const rad = getMouseAngle(e, knob_center);
 
   knobDragged = true;
   prevAngleRad = rad;
@@ -106,13 +114,15 @@ function stopDragging(e) {
   knobDragged = false;
 }
 
+
+
 function dragRotate(e) {
   if (!knobDragged) {
     return;
   }
 
   const old = prevAngleRad;
-  let rad = getMouseAngle(e, document.querySelector('.knob_center'));
+  let rad = getMouseAngle(e, knob_center);
   let delta = rad - old;
 
   prevAngleRad = rad;
@@ -145,11 +155,15 @@ function setEvtListeners() {
 setEvtListeners();
 setRotate(0);
 
-document.querySelectorAll('.modal_close').forEach(b => {
+const modal_close = document.querySelectorAll('.modal_close');
+const modal =  document.querySelectorAll('.modal');
+const body = document.querySelector('body');
+
+modal_close.forEach(b => {
   b.onclick = function() {
-    document.querySelectorAll('.modal').forEach(m => {
+   modal.forEach(m => {
       m.classList.toggle('modal_open', false);
-      document.querySelector('body').style.overflow = 'auto';
+      body.style.overflow = 'auto';
     });
   }
 });

@@ -64,8 +64,8 @@ function setRotate(rotate) {
   curRotate = rotate;
   curValue = rotateToValue(rotate);
 
-  modal_knobModal_value.innerHTML = '+' + curValue;
-  knob_value.innerHTML = '+' + curValue;
+  modal_knobModal__value.innerHTML = '+' + curValue;
+  knob__value.innerHTML = '+' + curValue;
   knob__indicator.style.strokeDasharray = curRotate * 360 * 1.73 + 265 + ' 629';
   knob__arrow.style.transform = 'rotate(' + (curRotate * 360) + 'deg)';
 }

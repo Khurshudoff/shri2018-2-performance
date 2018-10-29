@@ -3,7 +3,7 @@
 	font-style: normal;
 	font-weight: bold;
 	src: url('pts75f_w.eot');
-	src: local('PT Sans Bold'), url('pts75f_w-webfont_work.woff') format('woff');
+	src: local('PT Sans Bold'), url('./fonts/pts75f_w-webfont_work.woff') format('woff');
 }
 
 
@@ -12,7 +12,7 @@
 	font-family: 'PT Sans Narrow';
 	font-weight: bold;
 	src: url('ptn77f_w.eot');
-	src: local('PT Sans Narrow Bold'), url('ptn77f_w-webfont.woff') format('woff');
+	src: local('PT Sans Narrow Bold'), url('./fonts/ptn77f_w-webfont.woff') format('woff');
 }
 
 .adjust-bar {
